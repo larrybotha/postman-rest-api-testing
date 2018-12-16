@@ -1,0 +1,30 @@
+{
+  "name": "postman-rest-api-testing",
+  "version": "1.0.0",
+  "description": "Notes on how to use Postman to test REST APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larrybotha/postman-rest-api-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larrybotha/postman-rest-api-testing/issues"
+  },
+  "homepage": "https://github.com/larrybotha/postman-rest-api-testing#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "doctoc": "1.4.0",
+    "husky": "1.2.1",
+    "lint-staged": "8.1.0"
+  }
+}
