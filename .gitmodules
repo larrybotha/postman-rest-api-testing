@@ -1,0 +1,3 @@
+[submodule "requestbin"]
+	path = requestbin
+	url = git://github.com/Runscope/requestbin.git
