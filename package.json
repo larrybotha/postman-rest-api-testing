@@ -4,6 +4,7 @@
   "description": "Notes on how to use Postman to test REST APIs",
   "main": "index.js",
   "scripts": {
+    "server": "cd requestbin && docker-compose up",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
