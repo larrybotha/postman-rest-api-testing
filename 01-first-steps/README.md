@@ -2,7 +2,7 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- END doctoc -->
+
 
 - [Request builder](#request-builder)
   - [Simple request](#simple-request)
@@ -10,6 +10,7 @@
     - [With query params](#with-query-params)
   - [Saving requests](#saving-requests)
   - [Sending a basic POST request](#sending-a-basic-post-request)
+- [Using Postman](#using-postman)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -26,8 +27,8 @@ requests using:
 
 ### Simple request
 
-- Method: GET
-- Address: httpbin.org
+- Method: `GET`
+- Address: `httpbin.org`
 
 Once the request is sent and we get a response there are a few areas we can
 evaluate in the `Response` section. It's good to get into a habit of first
@@ -41,16 +42,16 @@ latest request listed there, too.
 
 ### Simple JSON request
 
-- Method: GET
-- Address: httpbin.org/get
+- Method: `GET`
+- Address: `httpbin.org/get`
 
 In `Body` in the `Response` section we can now see that we have a `json`
 response.
 
 #### With query params
 
-- Method: GET
-- Address: httpbin.org/get?myparam1=1&myparam2=my-string
+- Method: `GET`
+- Address: `httpbin.org/get?myparam1=1&myparam2=my-string`
 
 httpbin.org responds with a `json` object including an `args` property with our
 query parameters.
@@ -71,8 +72,8 @@ easier to read.
 
 ### Sending a basic POST request
 
-- Method: POST
-- Address: httpbin.org/post
+- Method: `POST`
+- Address: `httpbin.org/post`
 - Body:
     ```json
     {
@@ -98,3 +99,21 @@ button that appears on the right select `JSON`.
 
 With the details of the request above we can see that the response we get from
 httpbin.org includes a `json` property with the payload we sent in the request.
+
+## Using Postman
+
+Postman is useful in a number of different ways:
+
+- manual API testing
+- creating mock servers
+- collaborating with a team library
+- documenting APIs
+- scripting
+    - creating workflows
+    - writing tests
+- automatic API testing
+    - collection runner
+    - Newman
+        - Jenkins
+        - other CI servers
+    - monitors
