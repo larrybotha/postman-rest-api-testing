@@ -30,7 +30,7 @@ will list those requests.
     - [Form data](#form-data)
     - [Raw data](#raw-data)
     - [Binary data](#binary-data)
-  - [Prettyifying JSON](#prettyifying-json)
+  - [Prettifying JSON](#prettifying-json)
 - [Importing requests from the browser](#importing-requests-from-the-browser)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -131,7 +131,7 @@ before making requests.
 
 The `form-data` option for body also allows for file uploads.
 
-### Prettyifying JSON
+### Prettifying JSON
 
 On Mac one can use `CMD+b` to prettify data added to the _raw data_ if the
 selected content type supports it.
