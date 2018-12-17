@@ -20,7 +20,7 @@ will list those requests.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
+**Table of Contents**
 
 - [Creating requests](#creating-requests)
   - [`GET` with query params](#get-with-query-params)
