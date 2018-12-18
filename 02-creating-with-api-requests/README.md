@@ -32,6 +32,16 @@ will list those requests.
     - [Binary data](#binary-data)
   - [Prettifying JSON](#prettifying-json)
 - [Importing requests from the browser](#importing-requests-from-the-browser)
+- [Inspecting responses](#inspecting-responses)
+  - [Body](#body-1)
+  - [Headers](#headers-1)
+  - [Extra](#extra)
+- [Cookies](#cookies)
+  - [Cookie manager](#cookie-manager)
+  - [Cookies tab](#cookies-tab)
+- [Troubleshooting](#troubleshooting)
+  - [Configuring self-signed certificates](#configuring-self-signed-certificates)
+  - [Postman console](#postman-console)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -156,3 +166,113 @@ In Postman
 
 You can now view all the details pertaining to that request, and make the same
 complex requests directly from Postman.
+
+## Inspecting responses
+
+It's important to be able to analyze requests, and Postman makes it much easier
+to do so than other tools.
+
+A response has 3 parts:
+
+- status
+- body
+- headers
+
+### Body
+
+One can inspect a pretty formatted response body, raw, or preview for
+`Content-type` responses such as HTML.
+
+### Headers
+
+When inspecting headers for a response, Postman allows one to get more
+information for the header by hovering over the name of the header.
+
+### Extra
+
+If a response is a renderable asset, such as an image, Postman will render it.
+To download the image, click arrow next to _Send_ and select _Send and
+download_.
+
+Postman also lets one save responses which is useful when documenting your API.
+Examples are saved against specific items in a collection, and are available via
+the _Examples_ link to the right of the collection item's title.
+
+## Cookies
+
+Cookies are technically just a header, but Postman makes dealing with them more
+convenient.
+
+**Note:** To get your local RequestBin to respond to subsequent requests, make a
+request to your server directly from Postman before using your generated URL.
+
+- Method: `GET`
+
+In the _Headers_ section of your response, there'll be a key for `Set-Cookie`:
+
+```
+Set-Cookie →session=eyJyZWNlbnQiOltdfQ.XBlUxg.c76egs6AwVPUkZPKGEt1KprDRBc; HttpOnly; Path=/
+```
+
+This header instructs the browser to set a cookie. If cookies are set for a
+specific domain, the browser may be required to send those cookies on subsequent
+requests (e.g. using `credentials: 'include'` when making requests with
+`fetch`).
+
+When making requests, the browser sends a `Cookie` header. When getting
+responses, the server will send a `Set-Cookie` header.
+
+### Cookie manager
+
+Postman allows one to view and manage cookies via the cookie manager which can
+be opened used the _Cookies_ link on the request options bar.
+
+Cookies are organised by domain. Clicking the name of the cookie will allow one
+to edit the value of the cookie.
+
+Postman saves cookies in the same way the browser does - Postman persists
+cookies between sessions.
+
+New cookies can be created in the Cookie manager, too. By adding:
+
+```
+MY_COOKIE=foo; path=/; domain=0.0.0.0;
+```
+
+, resending the request, and then inspecting RequestBin we can see our new
+cookie was sent in our request inside the `Cookie` header. If our domain didn't
+match that of our server, our cookie wouldn't have been sent through in the
+request.
+
+### Cookies tab
+
+Because cookies have more information than other headers, Postman makes them
+easier to read than other headers by adding a _Cookies_ tab in the response
+section.
+
+## Troubleshooting
+
+- check if there is a typo in the URL
+- check if the service you are calling is available
+- type the domain or IP and port of your API you are calling into a browser
+- ensure you're using the correct protocol
+- if using self-signed certificates, configure Postman accordingly
+
+### Configuring self-signed certificates
+
+1. go to Preferences
+2. disable _SSL certificate verification_ temporarily to see if this is indeed
+   the issue. If so:
+3. go to _Certficates_
+4. add a certificate for the domain
+
+The proper solution would be to create a client certificate.
+
+### Postman console
+
+The Postman console helps debug requests. To open it go to _View_ -> _Show
+Postman console_.
+
+Each time a request is made, responses will be logged to the console while it is
+open for further inspection.
+
