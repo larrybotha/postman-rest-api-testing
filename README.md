@@ -8,3 +8,6 @@ from [Postman: The Complete Guide - REST API Testing](https://www.udemy.com/post
 
 1. [First steps](./01-first-steps)
 2. [Creating with API requests](./02-creating-with-api-requests)
+3. [Writing tests and scripts](./03-writing-tests-and-scripts)
+4. [Writing tests and scripts using variables](./04-writing-tests-and-scripts-using-variables)
+5. [Advanced assertions](./05-advanced-assertions)
