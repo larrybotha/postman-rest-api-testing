@@ -11,7 +11,7 @@
   - [Accessing collections from Newman](#accessing-collections-from-newman)
     - [Collection link](#collection-link)
     - [Export the collection](#export-the-collection)
-  - [Using the Postman API](#using-the-postman-api)
+    - [Using the Postman API](#using-the-postman-api)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -75,7 +75,7 @@ where `collection` could be a URL to your collection.
 Newman can also be run from a node script:
 
 ```bash
-$ node test/newman
+$ node tests/newman
 ```
 
 ## Accessing collections from Newman
@@ -93,6 +93,15 @@ and export using the latest version.
 
 This is also not a great strategy.
 
-## Using the Postman API
+### Using the Postman API
 
+Instead of using collection and environment URLs and exports, a better way is to
+make use of Postman's API to get collections and environments.
 
+Once you've obtained an API key via the web interface you can specify
+collections and environents with the following endpoints:
+
+```
+https://api.getpostman.com/collections/:uid?apikey=[apikey]
+https://api.getpostman.com/environments/:uid?apikey=[apikey]
+```
