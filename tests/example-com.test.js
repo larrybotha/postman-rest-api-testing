@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const newman = require('newman');
+const {handleResult} = require('jest-runner-newman/handle-result');
 
 const apiUrlBase = 'https://api.getpostman.com';
 
@@ -17,10 +18,10 @@ newman.run(
   {
     collection: getCollectionUrl(collectionUid, postmanApiKey),
     environment: getEnvironmentUrl(environmentUid, postmanApiKey),
-    reporters: ['cli', 'progress'],
+    reporters: ['cli'],
   },
   (err, summary) => {
-    if (err) throw err;
+    handleResult(err, summary);
 
     console.log('collection run complete');
   }
