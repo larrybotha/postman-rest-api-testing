@@ -12,3 +12,4 @@ from [Postman: The Complete Guide - REST API Testing](https://www.udemy.com/post
 4. [Writing tests and scripts using variables](./04-writing-tests-and-scripts-using-variables)
 5. [Advanced assertions](./05-advanced-assertions)
 6. [Automatically running tests](./06-automatically-running-tests)
+7. [Workflows and scenarios](./07-workflows-and-scenarios)
