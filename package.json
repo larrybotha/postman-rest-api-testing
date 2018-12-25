@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "cd requestbin && docker-compose up",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,8 @@
     "dotenv": "6.2.0",
     "husky": "1.2.1",
     "jest": "23.6.0",
-    "jest-runner-newman": "1.0.3",
+    "jest-runner-newman": "1.0.4",
+    "jest-watch-typeahead": "0.2.0",
     "lint-staged": "8.1.0",
     "newman": "4.2.3"
   },
