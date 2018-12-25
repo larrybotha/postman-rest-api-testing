@@ -12,6 +12,7 @@
     - [Collection link](#collection-link)
     - [Export the collection](#export-the-collection)
     - [Using the Postman API](#using-the-postman-api)
+  - [Running Newman with Docker](#running-newman-with-docker)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -104,4 +105,25 @@ collections and environents with the following endpoints:
 ```
 https://api.getpostman.com/collections/:uid?apikey=[apikey]
 https://api.getpostman.com/environments/:uid?apikey=[apikey]
+```
+
+## Running Newman with Docker
+
+Running tests via Docker is useful for integrating with a continuous delivery
+platform.
+
+There are a number of options when running tests via Docker:
+
+```bash
+docker run \
+    # run collections locally from a ~/collections folder
+    -v ~/collections:/etc/newman \
+    # using the postman/newman:ubuntu image
+    -t postman/newman:ubuntu \
+    # running a specific collection
+    run "HTTPBinNewmanTest.json.postman_collection" \
+    # with a specific environment
+    --environment="HTTPBinNewmanTestEnv.json.postman_environment" \
+    # and these newman options
+    --reporters="json,cli" --reporter-json-export="newman-results.json"
 ```
