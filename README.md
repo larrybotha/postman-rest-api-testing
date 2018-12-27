@@ -13,3 +13,4 @@ from [Postman: The Complete Guide - REST API Testing](https://www.udemy.com/post
 5. [Advanced assertions](./05-advanced-assertions)
 6. [Automatically running tests](./06-automatically-running-tests)
 7. [Workflows and scenarios](./07-workflows-and-scenarios)
+8. [Mock servers](./08-mock-servers)
