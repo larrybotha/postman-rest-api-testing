@@ -14,3 +14,4 @@ from [Postman: The Complete Guide - REST API Testing](https://www.udemy.com/post
 6. [Automatically running tests](./06-automatically-running-tests)
 7. [Workflows and scenarios](./07-workflows-and-scenarios)
 8. [Mock servers](./08-mock-servers)
+9. [File uploads](./09-file-uploads)
