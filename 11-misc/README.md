@@ -7,6 +7,7 @@
 - [Using 3rd-party libraries in Postman](#using-3rd-party-libraries-in-postman)
   - [Setup](#setup)
   - [Cleanup](#cleanup)
+- [Writing files with Postman](#writing-files-with-postman)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -46,3 +47,36 @@ Once finished with the import, one should clean up the environment:
 ```javascript
 pm.environment.unset('jscLib')
 ```
+
+## Writing files with Postman
+
+Postman doesn't have access to system commands, so one has to use Newman to
+write files to the system.
+
+Using Node's `fs.writeFile` along with `newman.run`s events, one can write files
+to the system at different times with different data.
+
+The following are the events currently supported by Newman at the time of
+writing:
+
+- `start`
+- `beforeIteration`
+- `beforeItem`
+- `beforePrerequest`
+- `prerequest`
+- `beforeRequest`
+- `request`
+- `beforeTest`
+- `test`
+- `beforeScript`
+- `script`
+- `item`
+- `iteration`
+- `assertion`
+- `console`
+- `exception`
+- `beforeDone`
+- `done`
+
+Visit [Newman's events docs](https://github.com/postmanlabs/newman#newmanrunevents)
+for more info.
